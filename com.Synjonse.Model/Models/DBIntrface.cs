@@ -6,6 +6,6 @@ namespace com.Synjonse.Model.Models
 {
     public interface DBIntrface
     {
-            
+              
     }
 }
