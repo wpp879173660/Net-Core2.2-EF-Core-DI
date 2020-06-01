@@ -14,9 +14,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common.Interface", "common.Interface\common.Interface.csproj", "{1C01EA5C-D0EA-4E71-8F28-BEEAADED84D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{08FD7422-05F8-404C-A7D2-C35059C0CC90}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\ADM\Desktop\SQLQuery2.sql = C:\Users\ADM\Desktop\SQLQuery2.sql
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIR", "UIR\UIR.csproj", "{F8A338D7-FAAC-49AC-BAE2-C64964F44F95}"
 EndProject
