@@ -19,5 +19,11 @@ namespace UIR.Properties
 
             return View(db.Student.ToList());
         }
+
+        public IActionResult AA()
+        {
+
+            return View(db.Student.ToList());
+        }
     }
 }
