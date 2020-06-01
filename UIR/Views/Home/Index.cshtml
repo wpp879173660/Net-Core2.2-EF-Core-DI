@@ -1,10 +1,12 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
+    Layout = "_layout";
+
 }
 
 <h1>Index</h1>
 @foreach (var item in Model)
 {
-    <h1>@item.Sname</h1>
+<h1>@item.Sname</h1>
 }

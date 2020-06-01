@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -15,16 +16,19 @@ namespace UIR
 {
     public class Startup
     {
+        //config配置文件 取到数据库连接字符串
+        private readonly IConfiguration _configuration;
+        public Startup(IConfiguration configuration) {
+            _configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             
             services.AddMvc();
-            //var sqlConn = Configuration.GetConnectionString("Conn");
-            //var sqlConn2 = Configuration["ConnectionStrings:Conn"];
             services.AddDbContext<HkTempContext>(option => {
-                option.UseSqlServer("Data Source =.; Initial Catalog = HkTemp; User ID = sa; Password = 123");
+                option.UseSqlServer(_configuration["ConnectionStrings:SchoolConnection"]);
             });
         }
 
@@ -38,6 +42,10 @@ namespace UIR
 
             app.UseRouting();
 
+            //访问样式类
+            app.UseStaticFiles();
+
+            //自定义路由
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
