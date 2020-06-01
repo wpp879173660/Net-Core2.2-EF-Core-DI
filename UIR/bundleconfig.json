@@ -12,7 +12,7 @@
       "node_modules/bootstrap/dist/css/bootstrap.css"
     ],
     "minify": {
-      "enabled": false 
+      "enabled": false  
     }
   }
 
