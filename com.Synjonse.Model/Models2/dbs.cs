@@ -4,6 +4,7 @@ using System.Text;
 
 namespace com.Synjonse.Model.Models2
 {
+    //权限视图类
    public class dbs
     {
         public string mname { get; set; }
