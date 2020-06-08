@@ -17,7 +17,7 @@ namespace UIR.Properties
 
         public IActionResult Index()
         {
-          
+
             //var dbs = (from a in db.Aset
             //          join m in db.Mset on a.Pid equals m.Mid
             //          join u in db.Uset on a.Mid equals u.Aid
@@ -36,9 +36,10 @@ namespace UIR.Properties
             //              Pname = set.Key.Pnanme,
             //              Aid = set.Key.Aid
             //          }).Where(a=>a.Aid == 3);
-            
-            
-            return View(db.dbs.Where(a=>a.aid==1).ToList());
+
+            //dbs s = db.dbs.Where(a => a.aid == 2).OrderBy(n=>n.aid).Take(1).Single();
+            //ViewBag.j = s.pnanme;
+            return View(db.dbs.Where(a=>a.aid==2).ToList());
         }
 
         public IActionResult AA()
