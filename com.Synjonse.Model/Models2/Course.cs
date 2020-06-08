@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace com.Synjonse.Model.Models
+namespace com.Synjonse.Model.Models2
 {
     public partial class Course
     {

@@ -29,6 +29,49 @@ GO
 use HkTemp
 go
 
+
+--角色职位表
+create table Rset(
+	pid int not null identity(1,1) primary key,
+	pnanme varchar(20) not null,
+)
+
+--权限管理
+create table Aset(
+	aid int not null identity(1,1) primary key,
+	pid int not null,
+	mid int not null,
+)
+
+--模块表
+create table Mset(
+	mid int not null identity(1,1) primary key,
+	mname varchar(20) not null,
+)
+
+--用户表
+create table Uset(
+	uid int not null identity(1,1) primary key,
+	unames varchar(20) not null,
+	uname varchar(20) not null,
+	upwd varchar(20) not null,
+	aid int not null,
+)
+--权限视图
+alter view dbs
+as
+select m.mname,r.pnanme,u.aid from Aset a join Mset m on
+a.pid = m.mid
+join Uset u on
+a.mid = u.aid
+join Rset r on
+r.pid = u.aid
+
+go
+
+-----------------------------------------------------------------------------------------
+
+
 create table AA
 (
 	id int identity(1,1) primary key,
@@ -75,6 +118,7 @@ create table Score(
 	--成绩
 	Degree Decimal
 )
+
 
 --学生表约束
 alter table Student
@@ -322,4 +366,10 @@ select distinct Prof from Teacher
 select Sname,Ssex,Class from Student
 
 
+create proc cc
+as
+begin
+	select * from Student
+end
 
+exec cc

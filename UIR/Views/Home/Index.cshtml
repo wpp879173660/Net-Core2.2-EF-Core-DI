@@ -5,8 +5,23 @@
 
 }
 
-<h1>Index</h1>
-@foreach (var item in Model)
-{
-<h1>@item.Sname</h1>
-}
+
+
+@*头部*@
+<div class="head">头部</div>
+
+@*身体*@
+<div style="width:auto;height:450px">
+    <div class="leftbody">
+        @foreach (var item in Model)
+        {
+           
+        <div class="kuai">@item.mname</div>
+           
+        }
+    </div>
+    <div class="rightbody">右侧</div>
+</div>
+
+@*脚步*@
+<div class="foot">脚块</div>

@@ -9,8 +9,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\com.Synjonse.Model\com.Synjonse.Model.csproj" />
-  </ItemGroup>
-
 </Project>
